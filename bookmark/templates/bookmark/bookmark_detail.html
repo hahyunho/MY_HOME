@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOOKMARK DETAIL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        * { padding : 0; margin : 0; }
+        body {
+            font-family: 'Jua', sans-serif;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+        }
+
+        .contents a {
+            text-decoration: none;
+            color: gray;
+            text-shadow: 0.5px 0.5px 0.5px black;
+            transition: 0.2s ;
+        }
+        .contents a:hover {
+            color: rgb(0, 0, 0);
+            text-shadow: 0px 0px 0px white;
+        }
+        .title {
+        color: #ddd;
+        text-shadow: 2px 2px 2px black;
+        text-transform: uppercase;
+        }
+        .nav {
+            position: fixed;
+            top: 30px;
+            left: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: gray;
+            text-shadow: 0.5px 0.5px 0.5px black;
+            transition: 0.2s ;
+        }
+        a:hover {
+            color: black;
+            text-shadow: 0px 0px 0px white;
+        }
+
+        .nav>ul {
+            list-style: none;
+            font-size: x-large;
+
+
+        }
+
+
+        .nav>ul>li {
+            display: inline-block;
+            padding: 10px;
+            margin: 0px 5px;
+            transition: 0.2s;
+        }
+        .nav>ul>li:hover {
+            border-bottom: 4px solid black;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li><a href="{% url 'bookmark_index' %}">BOOKMARK</a></li>
+            <li><a href="{% url 'blog' %}">BLOG</a></li>
+            <li><a href="{% url 'about' %}">ABOUT</a></li>
+        </ul>
+    </div>
+    <div class="contents">
+        <div class="contents">
+            <div>{{ object.title }}</div>
+            <a href="{{ object.url }}" target="_blank">{{ object.url }}</a>
+        </div>
+    </div>
+</body>
+</html>
